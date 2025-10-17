@@ -1,0 +1,25 @@
+# Ado.Net? 
+- Ado.Net (ActiveX DataObjects.Net) olan, Microsoft'un bize sunduðu ver itabaný ile uygulamalarýmýz arasýnda köprü görevi gören bir veriye eriþim teknolojisidir. 
+- Bu teknoloji ile verilerimizi listeyebilir, silebilir, güncelleyebilir veya yeni giriþi yapabiliriz. 
+
+- CRUD --> Create Read Update Delete 
+
+# SQL'de Stored Procedure Nedir? 
+- Veritabanýnda CRUD gibi iþlemlerde, her seferinde kodu tekrar yazmamýz ve derlememiz gerekmektedir. 
+- Durum böyle olunca hem zaman hem de derleme açýsýndan performans kaybý olmaktadýr. 
+- Bu gibi durumlarda Stode Procedure(Saklý Yordam), programlama da kullanýlan ifadelere göre kod yazmamýzý saðlar. 
+
+# Entity Framework Nedir? 
+- Entity Framework ORM(Object Relational Mapping) araçlarýndan biridir. 
+- ORM nedir: Ýliþkisel veritabaný ile nesneye yönelik proglamlama (OOP) arasýdan bir köprü görevi gören araçtýr. 
+- Bu köprü, iliþkisel veritabanýndaki bilgilerimizi yönetmek için nesne modellerimizi kullandýðýmýz bir yapýdýr. 
+- Entity Framework ile 4 farklý yöntem kullanarak proje geliþtirebilir: 
+	- Model First (Yeni Veritabaný Oluþturma)
+	- Database First (Var Olan Veritabanýný Kullanma)
+	- Code First (Yeni Veritabaný Kod Yazarak)
+	- Code First (Var Olan Veritabanýný Kullanma)
+- Dezavantajlarý:	
+	- Performans, Ado.Net gibi hýzlý bir performansý yoktur. 
+	- Schema'da herhangi bir deðiþiklik yapýldýðý zaman EF çalýþmayacaktýr. Bu Schema'yý solution'da güncellememiz gerekmektedir. 
+	- Veritabanýndan veri alýþveriþi yapýlacaðý zaman kontrol bizde deðil Entity Frameworktedir. 
+- EF de tablolarda birincil anahtar oluþturmak önemli. 
