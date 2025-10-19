@@ -23,3 +23,44 @@
 	- Schema'da herhangi bir deðiþiklik yapýldýðý zaman EF çalýþmayacaktýr. Bu Schema'yý solution'da güncellememiz gerekmektedir. 
 	- Veritabanýndan veri alýþveriþi yapýlacaðý zaman kontrol bizde deðil Entity Frameworktedir. 
 - EF de tablolarda birincil anahtar oluþturmak önemli. 
+
+# Code First Nedir?		
+- Code First, Entity Framework'ün 4 farklý yönteminden biridir.
+- Bu yöntemde veritabaný tasarýmýný kod yazarak yaparýz.
+- Yani öncelikle sýnýflarýmýzý oluþtururuz ve bu sýnýflara göre veritabaný tasarýmýmýzý yaparýz.
+- Code First yaklaþýmýnda, sýnýflarýmýzý oluþturduktan sonra Entity Framework, bu sýnýflara göre veritabaný tablolarýný otomatik olarak oluþturur.
+- Code First yaklaþýmýnda, veritabaný þemasýný deðiþtirmek istediðimizde, sýnýflarýmýzda gerekli deðiþiklikleri yaparýz ve ardýndan Entity Framework, bu deðiþikliklere göre veritabanýný günceller.	
+- Code First yaklaþýmýnda, veritabaný baðlantý bilgilerini genellikle uygulama yapýlandýrma dosyasýnda (app.config veya web.config) belirtiriz.	
+- Code First yaklaþýmýnda, veritabaný iþlemlerini gerçekleþtirmek için DbContext sýnýfýný kullanýrýz. DbContext, veritabaný baðlantýsýný yönetir ve veritabaný iþlemlerini gerçekleþtirir.	 
+- Avantajlarý:
+	- Hýzlý geliþtirme süreci saðlar.
+	- Kod tabanlý olduðu için sürüm kontrolü daha kolaydýr.
+	- Veritabaný þemasýný kodla yönetmek daha esnektir.	
+- Dezavantajlarý:	
+	- Büyük ve karmaþýk veritabanlarý için yönetimi zor olabilir.
+	- Performans, Ado.Net gibi hýzlý bir performansý yoktur.
+	- Veritabaný þemasýnda yapýlan deðiþiklikler manuel olarak takip edilmelidir.
+
+- Örnek Kullaným:
+```csharp
+public class Product
+{
+	public int Id { get; set; }
+	public string Name { get; set; }
+	public decimal Price { get; set; }
+}	
+public class AppDbContext : DbContext
+{
+	public DbSet<Product> Products { get; set; }
+}
+// Veritabaný iþlemleri	
+using (var context = new AppDbContext())
+{
+	// Yeni ürün ekleme
+	var product = new Product { Name = "Laptop", Price = 1500.00m };
+	context.Products.Add(product);
+	context.SaveChanges();
+	// Ürünleri listeleme
+	var products = context.Products.ToList();
+}
+```

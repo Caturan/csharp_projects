@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project1_AdonetCustomer", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2_EntityFrameworkDbFirstProduct", "EntityFrameworkDbFirstProduct\Project2_EntityFrameworkDbFirstProduct.csproj", "{4C046DCC-C130-47C6-9CFF-F03CFB5FAD2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project4_EntityFramework_Code_First_Movie", "Project4_EntityFramework_Code_First_Movie\Project4_EntityFramework_Code_First_Movie.csproj", "{044B1812-A4AD-4574-B55B-EE21D1EEE17F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4C046DCC-C130-47C6-9CFF-F03CFB5FAD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C046DCC-C130-47C6-9CFF-F03CFB5FAD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C046DCC-C130-47C6-9CFF-F03CFB5FAD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{044B1812-A4AD-4574-B55B-EE21D1EEE17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044B1812-A4AD-4574-B55B-EE21D1EEE17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044B1812-A4AD-4574-B55B-EE21D1EEE17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044B1812-A4AD-4574-B55B-EE21D1EEE17F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
