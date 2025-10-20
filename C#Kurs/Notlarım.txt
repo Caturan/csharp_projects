@@ -64,3 +64,33 @@ using (var context = new AppDbContext())
 	var products = context.Products.ToList();
 }
 ```
+
+# Dapper nedir? 
+- Dapper, .NET platformu için geliþtirilmiþ hafif ve yüksek performanslý bir mikro ORM (Object-Relational Mapper) kütüphanesidir.
+- Dapper, ADO.NET'in üzerine inþa edilmiþtir ve veritabaný iþlemlerini daha kolay ve hýzlý bir þekilde gerçekleþtirmek için tasarlanmýþtýr.
+- Dapper, SQL sorgularýný doðrudan yazmanýza olanak tanýr ve bu sorgularý nesnelere haritalar.
+- Dapper, performans açýsýndan oldukça etkilidir çünkü ADO.NET'in saðladýðý düþük seviyeli veritabaný eriþim yeteneklerini kullanýr.
+- Dapper, özellikle performansýn kritik olduðu durumlarda tercih edilir ve büyük veri setleriyle çalýþýrken bile hýzlý sonuçlar elde etmenizi saðlar.
+- Avantajlarý:
+	- Yüksek performans: Dapper, ADO.NET'in üzerine inþa edildiði için hýzlýdýr.
+	- Basit kullaným: SQL sorgularýný doðrudan yazmanýza olanak tanýr.
+	- Esneklik: Karmaþýk sorgularý kolayca yazabilirsiniz.
+- Dezavantajlarý:
+	- Otomatik þema yönetimi yoktur: Veritabaný þemasýný manuel olarak yönetmeniz gerekir.
+	- Daha az özellik: Entity Framework gibi tam özellikli ORM'lere kýyasla daha az özellik sunar.	
+- Örnek Kullaným:	
+```csharp	
+using Dapper;
+using System.Data.SqlClient;
+string connectionString = "your_connection_string";
+using (var connection = new SqlConnection(connectionString))
+{
+	connection.Open();
+	// Yeni ürün ekleme
+	var insertQuery = "INSERT INTO Products (Name, Price) VALUES (@Name, @Price)";
+	connection.Execute(insertQuery, new { Name = "Laptop", Price = 1500.00m });
+	// Ürünleri listeleme
+	var selectQuery = "SELECT * FROM Products";
+	var products = connection.Query<Product>(selectQuery).ToList();
+}
+```	
